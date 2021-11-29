@@ -1,5 +1,16 @@
 def find_first_duplicate(arr)
-  # type your code in here
+  if arr.empty? || arr.length == 1
+    return -1
+  end
+
+  temp = []
+  i = 0
+  while !temp.include?(arr[i]) do
+    temp.push(arr[i])
+    i+=1
+  end
+
+  i < arr.length ? arr[i] : -1
 end
 
 if __FILE__ == $PROGRAM_NAME
@@ -11,7 +22,10 @@ if __FILE__ == $PROGRAM_NAME
   puts "Expecting: -1"
   puts "=>", find_first_duplicate([1, 2, 3, 4])
 
-  # Don't forget to add your own!
+  puts
+
+  puts "Expecting 4"
+  puts "=>", find_first_duplicate([2,1,5,4,7,4,5,1])
 end
 
 # Please add your pseudocode to this file
